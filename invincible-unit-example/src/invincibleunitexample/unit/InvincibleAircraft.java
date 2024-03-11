@@ -30,8 +30,8 @@ public class InvincibleAircraft extends UnitType {
         drawCell = false;
         createWreck = false;
         createScorch = false;
-        deathExplosionEffect = Fx.unitDespawn;
-        fallEffect = Fx.despawn;
+        deathExplosionEffect = Fx.despawn;
+        fallEffect = Fx.none;
         fallEngineEffect = Fx.none;
         deathSound = Sounds.none;
         healFlash = false;
