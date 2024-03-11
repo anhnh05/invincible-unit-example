@@ -47,8 +47,8 @@ public class InvincibleAircraft extends UnitType {
 
         health = 500000f;
         speed = 8f;
-        accel = 0.6f;
-        drag = 0.35f;
+        accel = 0.2f;
+        drag = 0.1f;
         armor = 0f;
         hitSize = 9f;
         rotateSpeed = 15f;
