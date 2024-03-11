@@ -24,7 +24,7 @@ import invincibleunitexample.*;
 public class InvincibleAircraft extends UnitType {
     public InvincibleAircraft(String name) {
         super(name);
-        description = "A literally indestructible aircraft.";
+        description = "A literally indestructible aircraft. \n\n\n[red]Loses its invincibility properties upon reloading a save.";
 
         outlines = true;
         drawCell = false;
