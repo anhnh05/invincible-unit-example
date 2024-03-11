@@ -10,6 +10,7 @@ import mindustry.*;
 import mindustry.content.Fx;
 import mindustry.content.StatusEffects;
 import mindustry.entities.*;
+import mindustry.entities.abilities.RegenAbility;
 import mindustry.entities.bullet.*;
 import mindustry.gen.*;
 import mindustry.graphics.*;
@@ -30,9 +31,10 @@ public class InvincibleAircraft extends UnitType {
         createWreck = false;
         createScorch = false;
         deathExplosionEffect = Fx.unitDespawn;
-        fallEffect = Fx.unitDespawn;
+        fallEffect = Fx.despawn;
         fallEngineEffect = Fx.none;
         deathSound = Sounds.none;
+        healFlash = false;
         
         envDisabled = 0;
         envEnabled = Env.any;
@@ -59,6 +61,7 @@ public class InvincibleAircraft extends UnitType {
         rotateSpeed = 15f;
 
         constructor = InvincibleAircraftUnit::new;
+        
     }    
     public void init(){
         super.init();
@@ -70,5 +73,8 @@ public class InvincibleAircraft extends UnitType {
         immunities.remove(StatusEffects.none);
         immunities.remove(StatusEffects.invincible);
 
+        abilities.add(new RegenAbility() {{
+            percentAmount = 100f;
+        }});
     }
 }

@@ -6,27 +6,26 @@ import mindustry.type.*;
 import mindustry.entities.*;
 
 public class InvincibleAircraftUnit extends UnitEntity {
-    protected boolean vulnerable = false;
-    protected float lastX, lastY;
+    private boolean vulnerable = false;
+    private float realX, realY;
 
     @Override
     public void update() {
         if (!vulnerable) {
-            if (health < maxHealth) {
-                health = maxHealth;
-            };
+            health = maxHealth;
+            elevation = 1f;
             dead = false;
             if (Float.isNaN(x) || Float.isInfinite(x)) {
-                x = lastX;
+                x = realX;
             }
             else {
-                lastX = x;
+                realX = x;
             };
             if (Float.isNaN(y) || Float.isInfinite(y)) {
-                y = lastY;
+                y = realY;
             }
             else {
-                lastY = y;
+                realY = y;
             }
         }
         super.update();
