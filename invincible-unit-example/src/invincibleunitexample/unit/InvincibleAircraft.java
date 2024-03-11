@@ -59,6 +59,8 @@ public class InvincibleAircraft extends UnitType {
         armor = 0f;
         hitSize = 9f;
         rotateSpeed = 15f;       
+
+        constructor = InvincibleAircraftUnit::new;
     }    
 
     public void init(){
