@@ -1,3 +1,5 @@
+package invincibleunitexample.content;
+
 import mindustry.ai.*;
 import mindustry.content.*;
 import mindustry.gen.*;
