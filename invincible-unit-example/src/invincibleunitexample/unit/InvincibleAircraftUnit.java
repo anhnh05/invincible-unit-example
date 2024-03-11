@@ -39,13 +39,12 @@ public class InvincibleAircraftUnit extends UnitEntity {
 
     @Override
     public void kill() {
-        if (!vulnerable) return;
-        super.kill();
+        return;
     }
 
     @Override
     public void destroy() {
-        disableInvincibility();
+        if (!vulnerable) return;
         super.destroy();
     }
 

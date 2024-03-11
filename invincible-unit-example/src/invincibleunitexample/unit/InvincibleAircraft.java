@@ -1,6 +1,7 @@
 package invincibleunitexample.unit;
 
 import arc.*;
+import arc.audio.Sound;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.math.geom.*;
@@ -22,13 +23,16 @@ import invincibleunitexample.*;
 public class InvincibleAircraft extends UnitType {
     public InvincibleAircraft(String name) {
         super(name);
-        description = "A literally indestructible aircraft.\nCan be removed via destroy() function.";
+        description = "A literally indestructible aircraft.";
 
         outlines = true;
         drawCell = false;
         createWreck = false;
         createScorch = false;
         deathExplosionEffect = Fx.unitDespawn;
+        fallEffect = Fx.unitDespawn;
+        fallEngineEffect = Fx.none;
+        deathSound = Sounds.none;
         
         envDisabled = 0;
         envEnabled = Env.any;
