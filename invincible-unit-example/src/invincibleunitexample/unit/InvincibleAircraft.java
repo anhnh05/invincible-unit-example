@@ -7,6 +7,7 @@ import arc.math.geom.*;
 import arc.util.*;
 import mindustry.*;
 import mindustry.content.Fx;
+import mindustry.content.StatusEffects;
 import mindustry.entities.*;
 import mindustry.entities.bullet.*;
 import mindustry.gen.*;
@@ -55,4 +56,15 @@ public class InvincibleAircraft extends UnitType {
 
         constructor = InvincibleAircraftUnit::new;
     }    
+    public void init(){
+        super.init();
+        immunities.addAll(Vars.content.statusEffects());
+        immunities.remove(StatusEffects.boss);
+        immunities.remove(StatusEffects.overclock);
+        immunities.remove(StatusEffects.overdrive);
+        immunities.remove(StatusEffects.fast);
+        immunities.remove(StatusEffects.none);
+        immunities.remove(StatusEffects.invincible);
+
+    }
 }
