@@ -8,6 +8,8 @@ public class IUEUnitTypes {
     public static UnitType invincibleAircraft;
 
     public static void load() {
-        invincibleAircraft = new InvincibleAircraft("invincible-aircraft");
+        invincibleAircraft = new InvincibleAircraft("invincible-aircraft") {{
+            localizedName = "Invincible Aircraft";
+        }};
     }
 }
