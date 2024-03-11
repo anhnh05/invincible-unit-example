@@ -1,0 +1,10 @@
+{
+    "name": "invincible-unit-example",
+    "displayName": "Invincible Unit Example",
+    "author": "anh",
+    "description": "contains an invincible unit for you to mess around",
+    "minGameVersion": 146,
+    "version": "1.0",
+    "main": "invincibleunitexample.InvincibleUnitExample",
+    "java": true
+}
