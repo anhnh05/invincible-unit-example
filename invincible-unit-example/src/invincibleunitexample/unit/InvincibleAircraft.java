@@ -30,7 +30,7 @@ public class InvincibleAircraft extends UnitType {
         drawCell = false;
         createWreck = false;
         createScorch = false;
-        deathExplosionEffect = Fx.despawn;
+        deathExplosionEffect = Fx.spawn;
         fallEffect = Fx.none;
         fallEngineEffect = Fx.none;
         deathSound = Sounds.none;
@@ -58,13 +58,13 @@ public class InvincibleAircraft extends UnitType {
         drag = 0.1f;
         armor = 0f;
         hitSize = 9f;
-        rotateSpeed = 15f;
-
-        constructor = InvincibleAircraftUnit::new;
-        
+        rotateSpeed = 15f;       
     }    
+
     public void init(){
         super.init();
+        constructor = InvincibleAircraftUnit::new;
+
         immunities.addAll(Vars.content.statusEffects());
         immunities.remove(StatusEffects.boss);
         immunities.remove(StatusEffects.overclock);
