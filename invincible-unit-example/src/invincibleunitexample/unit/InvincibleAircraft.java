@@ -2,6 +2,7 @@ package invincibleunitexample.unit;
 
 import arc.*;
 import arc.audio.Sound;
+import arc.graphics.Color;
 import arc.graphics.g2d.*;
 import arc.math.*;
 import arc.math.geom.*;
@@ -20,12 +21,11 @@ import mindustry.world.meta.*;
 import static mindustry.Vars.*;
 
 import invincibleunitexample.*;
+import invincibleunitexample.bullet.StunLaser;
 
 public class InvincibleAircraft extends UnitType {
     public InvincibleAircraft(String name) {
         super(name);
-        description = "A literally indestructible aircraft. \n\n\n[red]Loses its invincibility properties upon reloading a save.";
-
         outlines = true;
         drawCell = false;
         createWreck = false;
@@ -42,24 +42,6 @@ public class InvincibleAircraft extends UnitType {
 
         flying = true;
 
-        buildSpeed = 50f;
-
-        itemCapacity = 500;
-
-        mineRange = 120f;
-        mineTier = 99999;
-        mineSpeed = 30f;
-        mineWalls = true;
-        mineHardnessScaling = false;
-
-        health = 500000f;
-        speed = 8f;
-        accel = 0.2f;
-        drag = 0.1f;
-        armor = 0f;
-        hitSize = 9f;
-        rotateSpeed = 15f;       
-
         constructor = InvincibleAircraftUnit::new;
     }    
 
@@ -71,12 +53,13 @@ public class InvincibleAircraft extends UnitType {
         immunities.remove(StatusEffects.boss);
         immunities.remove(StatusEffects.overclock);
         immunities.remove(StatusEffects.overdrive);
+        immunities.remove(StatusEffects.shielded);
         immunities.remove(StatusEffects.fast);
         immunities.remove(StatusEffects.none);
         immunities.remove(StatusEffects.invincible);
 
         abilities.add(new RegenAbility() {{
             percentAmount = 100f;
-        }});
+        }});        
     }
 }

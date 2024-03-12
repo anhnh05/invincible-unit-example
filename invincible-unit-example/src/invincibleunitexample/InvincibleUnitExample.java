@@ -9,6 +9,7 @@ public class InvincibleUnitExample extends Mod{
 
     @Override
     public void loadContent(){
+        IUEStatuses.load();
         IUEUnitTypes.load();
     }
 }
